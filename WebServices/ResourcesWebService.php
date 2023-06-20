@@ -128,10 +128,9 @@ class ResourcesWebService
      * @response ResourcesAvailabilityResponse
      * @return void
      */
-    public function GetAvailability()
+    public function GetAvailability($resourceId)
     {
         $dateQueryString = $this->server->GetQueryString(WebServiceQueryStringKeys::DATE_TIME);
-        $resourceId = $this->server->GetQueryString(WebServiceQueryStringKeys::RESOURCE_ID);
 
         if (!empty($dateQueryString)) {
             $requestedTime = WebServiceDate::GetDate($dateQueryString, $this->server->GetSession());
